@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+<link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
+<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body ontouchstart>
+<div class="container">
+   
+   <div class="weui-flex">
+            <div class="weui-flex__item"><div class="placeholder">志愿填报</div></div>
+        </div>
+    <div id="reg_form" class="weui-cells weui-cells_form" style="margin-top: 0px;">
+	        <div class="weui-cell">
+				<div class="weui-cell__hd"><label class="weui-label">高考分数</label></div>
+				<div class="weui-cell__bd">
+					<input  class="weui-input" type="number" required pattern="^[0-9]{1,3}$" placeholder="输入你的高考分数" emptyTips="请输入高考分数">
+				</div>
+				<div class="weui-cell__ft">
+					<i class="weui-icon-warn"></i>
+				</div>
+			</div>
+	
+	      
+			<div class="weui-cell weui-cell_select weui-cell_select-after">
+                <div class="weui-cell__hd">
+                    <label for="" class="weui-label">文理科</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <select class="weui-select" name="select2">
+                        <option value="1">文科</option>
+                        <option value="2">理科</option>
+                    </select>
+                </div>
+            </div>
+
+			<div class="weui-cell weui-cell_select weui-cell_select-after">
+                <div class="weui-cell__hd">
+                    <label for="" class="weui-label">批次</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <select class="weui-select" name="select2">
+                        <option value="1">一本</option>
+                        <option value="2">二本</option>
+						<option value="2">高职</option>
+                    </select>
+                </div>
+            </div>
+
+		
+			<div class="weui-cell weui-cell_select weui-cell_select-after">
+                <div class="weui-cell__hd">
+                    <label for="" class="weui-label">地区</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <select class="weui-select" name="select2">
+                        <option value="1">辽宁</option>
+                        <option value="2">北京</option>
+						<option value="3">上海</option>
+                    </select>
+                </div>
+            </div>
+               
+			<div class="weui-cell" style="padding-top: 0px; padding-bottom: 0px;padding-right: 0px;">
+				<a  class="weui-cell weui-cell_access" href="javascript:;"style = "margin-top: 0px;;width: 100%;padding-left: 0px;">
+                <div id="zhuanyie" class="weui-cell__bd">
+                    <p>意愿专业</p>
+                </div>
+				<div>最多选择3个(已选3个)</div>
+                <div class="weui-cell__ft"><i class="weui-icon-warn"></i></div>
+               </a>
+			</div>
+			
+			<div class="weui-cell" style="padding-left: 30px;">
+                <div class="weui-cell__bd">
+                    <p>电气自动化类</p>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn" href="javascript:" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+ 			</div>
+			<div class="weui-cell" style="padding-left: 30px;">
+                <div class="weui-cell__bd">
+                    <p>机械类</p>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn" href="javascript:" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+ 			</div>
+			<div class="weui-cell" style="padding-left: 30px;">
+                <div class="weui-cell__bd">
+                    <p>计算机类</p>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn" href="javascript:" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+ 			</div>
+			<!-- <div class="weui-cell" style="padding-left: 30px;"> -->
+                <!-- <div class="weui-cell__bd"> -->
+                    <!-- <p>意愿专业</p> -->
+                <!-- </div><a class="weui-swiped-btn weui-swiped-btn_warn" href="javascript:" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a> -->
+ 			<!-- </div> -->
+    </div>
+	<div class="weui-btn-area">
+	   <a id="formSubmitBtn" href="javascript:" class="weui-btn weui-btn_primary btn-color">下一步</a>
+	</div>
+</div>
+<div class="weui-tabbar">
+<a id="fill-out" href="javascript:;" class="weui-tabbar__item weui-bar__item_on">
+	<span style="display: inline-block;position: relative;">
+		<img src="./images/icon_1.png" alt="" class="weui-tabbar__icon">
+		<span class="weui-badge" style="position: absolute;top: -2px;right: -13px;">0</span>
+	</span>
+	<p class="weui-tabbar__label">志愿填报</p>
+</a>
+<a href="javascript:;" class="weui-tabbar__item">
+	<img src="./images/icon_2.png" alt="" class="weui-tabbar__icon">
+	<p class="weui-tabbar__label">填报查询</p>
+</a>
+<a id="online-pay" href="javascript:;" class="weui-tabbar__item">
+	<span style="display: inline-block;position: relative;">
+		<img src="./images/icon_3.png" alt="" class="weui-tabbar__icon">
+		<span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
+	</span>
+	<p class="weui-tabbar__label">在线支付</p>
+</a>
+<a href="javascript:;" class="weui-tabbar__item">
+	<img src="./images/icon_4.png" alt="" class="weui-tabbar__icon">
+	<p class="weui-tabbar__label">使用说明</p>
+</a>
+</div>
+<script type="text/javascript" src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<!-- http://www.css88.com/doc/zeptojs_api/ -->
+<script type="text/javascript">
+Zepto(function($){
+  
+  weui.form.checkIfBlur('#reg_form', {
+    regexp: {
+        IDNUM: /(?:^\d{15}$)|(?:^\d{18}$)|^\d{17}[\dXx]$/,
+        VCODE: /^.{4}$/
+    }
+  });
+  
+  var elem = $('#formSubmitBtn')
+  // observe all clicks inside #content:
+  elem.on('click', function(e){ 
+        //
+		
+		//weui.form.showErrorTips({ele: document.getElementById("zhuanyie"),msg: 'empty'});
+        //return;
+		<!-- weui.form.validate('#reg_form', function (error) { -->
+		<!-- if (!error) { -->
+			<!-- var loading = weui.loading('提交中...'); -->
+			<!-- setTimeout(function () { -->
+				<!-- loading.hide(); -->
+				<!-- weui.toast('提交成功', 3000); -->
+			<!-- }, 1500); -->
+		<!-- } -->
+		// return true; // 当return true时，不会显示错误
+		<!-- }, { -->
+		<!-- regexp: { -->
+			<!-- IDNUM: /(?:^\d{15}$)|(?:^\d{18}$)|^\d{17}[\dXx]$/, -->
+			<!-- VCODE: /^.{4}$/ -->
+		<!-- } -->
+	<!-- }); -->
+	window.location.replace('4.html');
+	
+  })
+  
+})
+</script>
+</body>
+</html>
