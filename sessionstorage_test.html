@@ -2,6 +2,9 @@
 <html>
 <head>
 <script>
+window.stop ? window.stop() : document.execCommand("Stop");
+</script
+<script>
 function clickCounter() {
     if(typeof(Storage) !== "undefined") {
         if (sessionStorage.clickcount) {
@@ -14,11 +17,22 @@ function clickCounter() {
         document.getElementById("result").innerHTML = "抱歉！您的浏览器不支持 Web Storage ...";
     }
 }
+
+function is_weixin() { 
+    var ua = window.navigator.userAgent.toLowerCase(); 
+    if (ua.match(/MicroMessenger/i) == 'micromessenger') { 
+        document.getElementById("iswx").innerHTML = ("微信浏览器"); 
+    } else { 
+       document.getElementById("iswx").innerHTML = ("不是微信浏览器"); 
+    } 
+}
+
 </script>
 </head>
-<body>
-<p><button onclick="clickCounter()" type="button">请点击这里</button></p>
+<body onload="is_weixin();">
+<p><button onclick="clickCounter()" type="button" >请点击这里</button></p>
 <div id="result"></div>
+<div id="iswx"></div>
 <p>请点击按钮使计数器递增。</p>
 <p>请关闭浏览器或标签页，然后再试一次，计数器会重置。</p>
 
