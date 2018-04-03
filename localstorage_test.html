@@ -40,7 +40,18 @@ mmargs = {};
 mmargs['name']='wwww';
 mmargs['age']=10;
 
-document.getElementById("qss").innerHTML = JSON.stringify(qs) + JSON.stringify(mmargs);
+var myarr = [];
+myarr.push( {
+id:001,
+name:"一叶扁舟",
+age:23
+});
+myarr.push( {
+id:002,
+name:"jkl",
+age:26
+})
+document.getElementById("qss").innerHTML = JSON.stringify(myarr) + "<br/>"+ JSON.stringify(qs) + "<br/>"+ JSON.stringify(mmargs);
 </script>
 
 </body>
