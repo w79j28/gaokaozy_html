@@ -2,7 +2,12 @@
 <html>
 <head>
 <script>
-window.stop ? window.stop() : document.execCommand("Stop");
+	var ua = window.navigator.userAgent.toLowerCase(); 
+	if (ua.match(/MicroMessenger/i) == 'micromessenger') { 
+		//
+	} else { 
+	   window.stop ? window.stop() : document.execCommand("Stop");
+	} 
 </script>
 <script>
 function clickCounter() {
