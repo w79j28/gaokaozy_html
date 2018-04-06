@@ -86,7 +86,12 @@
 <!-- http://www.css88.com/doc/zeptojs_api/ -->
 <script type="text/javascript">
 Zepto(function($){
-
+ var elem = $('#formSubmitBtn')
+  // observe all clicks inside #content:
+  elem.on('click', function(e){ 
+        //
+       window.location.replace('3.html');
+  });
 })
 </script>
 </body>

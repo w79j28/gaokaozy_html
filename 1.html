@@ -73,6 +73,22 @@
 </div>
 <script type="text/javascript" src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
 <!-- http://www.css88.com/doc/zeptojs_api/ -->
+
+		<!-- weui.form.validate('#reg_form', function (error) { -->
+		<!-- if (!error) { -->
+			<!-- var loading = weui.loading('提交中...'); -->
+			<!-- setTimeout(function () { -->
+				<!-- loading.hide(); -->
+				<!-- weui.toast('提交成功', 3000); -->
+			<!-- }, 1500); -->
+		<!-- } -->
+		<!-- // return true; // 当return true时，不会显示错误 -->
+		<!-- }, { -->
+		<!-- regexp: { -->
+			<!-- IDNUM: /(?:^\d{15}$)|(?:^\d{18}$)|^\d{17}[\dXx]$/, -->
+			<!-- VCODE: /^.{4}$/ -->
+		<!-- } -->
+	<!-- }); -->
 <script type="text/javascript">
 Zepto(function($){
   weui.form.checkIfBlur('#reg_form', {
@@ -86,21 +102,7 @@ Zepto(function($){
   // observe all clicks inside #content:
   elem.on('click', function(e){ 
         //
-		weui.form.validate('#reg_form', function (error) {
-		if (!error) {
-			var loading = weui.loading('提交中...');
-			setTimeout(function () {
-				loading.hide();
-				weui.toast('提交成功', 3000);
-			}, 1500);
-		}
-		// return true; // 当return true时，不会显示错误
-		}, {
-		regexp: {
-			IDNUM: /(?:^\d{15}$)|(?:^\d{18}$)|^\d{17}[\dXx]$/,
-			VCODE: /^.{4}$/
-		}
-	});
+       window.location.replace('2.html');
   });
   
   $('#myschool').on('click', function(e){
