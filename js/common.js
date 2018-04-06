@@ -1,4 +1,5 @@
 Zepto(function($){
+	$('.container').attr("style","height: "+(getClientHeight()-66)+"px");
   
 	// tabbar
 	$('#fill-out').on('click', function(e){ 
@@ -13,3 +14,16 @@ Zepto(function($){
 	});
 
 })
+
+function getClientHeight(){
+   var clientHeight=0;
+   if(document.body.clientHeight&&document.documentElement.clientHeight)
+   {
+   var clientHeight = (document.body.clientHeight<document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;   
+   }
+   else
+   {
+   var clientHeight = (document.body.clientHeight>document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;   
+   }
+   return clientHeight;
+}

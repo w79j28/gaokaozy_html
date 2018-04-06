@@ -51,19 +51,54 @@
                 </div>
             </div>
 
-		
-			<div class="weui-cell weui-cell_select weui-cell_select-after">
-                <div class="weui-cell__hd">
-                    <label for="" class="weui-label">地区</label>
+		    <div class="weui-cell" style="padding-top: 0px; padding-bottom: 0px;padding-right: 0px;">
+				<a id="area-list" class="weui-cell weui-cell_access" href="javascript:;"style = "margin-top: 0px;;width: 100%;padding-left: 0px;">
+                <div id="zhuanyie" class="weui-cell__bd">
+                    <p>地区</p>
                 </div>
+				<div>最多选择6个(已选6个)</div>
+                <div class="weui-cell__ft"><i class="weui-icon-warn"></i></div>
+               </a>
+			</div>
+			<div style="display: none" id="area-item-template">
+			   <div  class="weui-cell select-item select-area-item" style="padding-left: 30px;">
                 <div class="weui-cell__bd">
-                    <select class="weui-select" name="select2">
-                        <option value="1">辽宁</option>
-                        <option value="2">北京</option>
-						<option value="3">上海</option>
-                    </select>
+                    <p>#name</p>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+ 			</div>
+			</div>
+			
+			<div class="weui-cell select-area-item" style="padding-left: 30px;">
+                <div class="weui-cell__bd">
+                    <p>辽宁</p>
                 </div>
-            </div>
+ 			</div>
+			<div  class="weui-cell select-item select-area-item" style="padding-left: 30px;">
+                <div class="weui-cell__bd">
+                    <p>北京</p>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+ 			</div>
+			<div class="weui-cell select-item select-area-item" style="padding-left: 30px;">
+                <div class="weui-cell__bd">
+                    <p>上海</p>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn"  style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+ 			</div>
+			<div class="weui-cell select-item select-area-item" style="padding-left: 30px;">
+                <div class="weui-cell__bd">
+                    <p>广州</p>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn"  style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+ 			</div>
+			<div class="weui-cell select-item select-area-item" style="padding-left: 30px;">
+                <div class="weui-cell__bd">
+                    <p>山东</p>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn"  style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+ 			</div>
+			<div class="weui-cell select-item select-area-item" style="padding-left: 30px;">
+                <div class="weui-cell__bd">
+                    <p>深圳</p>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn"  style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+ 			</div>
+			
                
 			<div class="weui-cell" style="padding-top: 0px; padding-bottom: 0px;padding-right: 0px;">
 				<a  class="weui-cell weui-cell_access" href="javascript:;"style = "margin-top: 0px;;width: 100%;padding-left: 0px;">
@@ -75,17 +110,17 @@
                </a>
 			</div>
 			
-			<div class="weui-cell" style="padding-left: 30px;">
+			<div class="weui-cell select-item" style="padding-left: 30px;">
                 <div class="weui-cell__bd">
                     <p>电气自动化类</p>
                 </div><a class="weui-swiped-btn weui-swiped-btn_warn" href="javascript:" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
  			</div>
-			<div class="weui-cell" style="padding-left: 30px;">
+			<div class="weui-cell select-item" style="padding-left: 30px;">
                 <div class="weui-cell__bd">
                     <p>机械类</p>
                 </div><a class="weui-swiped-btn weui-swiped-btn_warn" href="javascript:" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
  			</div>
-			<div class="weui-cell" style="padding-left: 30px;">
+			<div class="weui-cell select-item" style="padding-left: 30px;">
                 <div class="weui-cell__bd">
                     <p>计算机类</p>
                 </div><a class="weui-swiped-btn weui-swiped-btn_warn" href="javascript:" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
@@ -128,7 +163,66 @@
 <script type="text/javascript" src="./js/common.js"></script>
 <!-- http://www.css88.com/doc/zeptojs_api/ -->
 <script type="text/javascript">
+function remove_click(){
+	$('.select-item').each(function(index){
+		 $(this).on('click', function(e){
+			$(this).remove();
+		});
+	 });
+}
 Zepto(function($){
+  
+  remove_click();
+  $('#area-list').on('click', function(e){
+		weui.actionSheet([
+		{
+			label: '北京',
+			onClick: function () {
+				console.log('北京');
+				item = $('#area-item-template').html();
+				$('.select-area-item').last().after(item.replace(/#name/ig, '北京1'));
+				remove_click();
+			}
+		}, {
+			label: '上海',
+			onClick: function () {
+				console.log('上海');
+			}
+		}, {
+			label: '广州',
+			onClick: function () {
+				console.log('广州');
+			}
+		}, {
+			label: '山东',
+			onClick: function () {
+				console.log('山东');
+			}
+		}, {
+			label: '深圳',
+			onClick: function () {
+				console.log('深圳');
+			}
+		}
+		], [
+			{
+				label: '取消',
+				onClick: function () {
+					console.log('取消');
+				}
+			}
+		], {
+			className: 'custom-classname',
+			onClose: function(){
+				console.log('关闭');
+			}
+		});    
+  });
+  
+  
+  
+  
+  
   
   weui.form.checkIfBlur('#reg_form', {
     regexp: {

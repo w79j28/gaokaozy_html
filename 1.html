@@ -15,7 +15,7 @@
             <div class="weui-flex__item"><div class="placeholder">注 册</div></div>
         </div>
    
-    <div id="reg_form" class="weui-cells weui-cells_form" style="margin-top: 8px;">
+    <div id="reg_form" class="weui-cells weui-cells_form" style="margin-top: 0px;">
 	        <div class="weui-cell">
 				<div class="weui-cell__hd"><label class="weui-label">姓   名</label></div>
 				<div class="weui-cell__bd">
@@ -26,16 +26,16 @@
 				</div>
 			</div>
 	
-	        <div class="weui-cell">
-				<div class="weui-cell__hd"><label class="weui-label">高中名称</label></div>
-				<div class="weui-cell__bd">
-					<input class="weui-input" type="text" required  maxlength="18" placeholder="选择你的高中学校" emptyTips="请选择学校" notMatchTips="请选择学校">
-				</div>
-				<div class="weui-cell__ft">
-					<i class="weui-icon-warn"></i>
-				</div>
+	        <div class="weui-cell" style="padding-top: 0px; padding-bottom: 0px;padding-right: 0px;">
+				<a id="myschool" class="weui-cell weui-cell_access" href="javascript:;"style = "margin-top: 0px;;width: 100%;padding-left: 0px;">
+                <div id="zhuanyie" class="weui-cell__bd">
+                    <p>中学名称</p>
+                </div>
+				<div id="school-name"></div>
+                <div class="weui-cell__ft"><i class="weui-icon-warn"></i></div>
+               </a>
 			</div>
-			
+	        
 			<div class="weui-cell">
 			
                 <div class="weui-cell__hd">
@@ -101,7 +101,67 @@ Zepto(function($){
 			VCODE: /^.{4}$/
 		}
 	});
-  })
+  });
+  
+  $('#myschool').on('click', function(e){
+    weui.picker([
+        {
+            label: '大连',
+            value: 100,
+			children: [
+			  {
+			  label: '中学中学中学名称1',
+              value: 1000
+			  },
+			  {
+			  label: '中学中学名称2',
+              value: 1001
+			  },
+			  {
+			  label: '中学中学名称3',
+              value: 1002
+			  }
+			]
+        },
+        {
+            label: '沈阳',
+            value: 101,
+			children: [
+			  {
+			  label: '中学中学中学中学中学名称4',
+              value: 1003
+			  },
+			  {
+			  label: '中学名称5',
+              value: 1004
+			  },
+			  {
+			  label: '中学名称6',
+              value: 1005
+			  },
+			  {
+			  label: '中学名称7',
+              value: 1006
+			  }
+			]
+        }
+    ], {
+   className: 'custom-classname',
+   container: 'body',
+   defaultValue: [1, 3],
+   onChange: function (result) {
+       console.log(result)
+   },
+   onConfirm: function (result) {
+       console.log(result)
+	   $('#school-name').text(result[1].label)
+   },
+   id: 'doubleLinePicker'
+});
+  
+  }
+  );
+  
 })
 </script>
 </body>
