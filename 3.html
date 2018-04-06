@@ -56,80 +56,97 @@
                 <div id="zhuanyie" class="weui-cell__bd">
                     <p>地区</p>
                 </div>
-				<div>最多选择6个(已选6个)</div>
+				<div>最多选择6个(已选<span id="area_number">6</span>个)</div>
                 <div class="weui-cell__ft"><i class="weui-icon-warn"></i></div>
                </a>
 			</div>
 			<div style="display: none" id="area-item-template">
-			   <div  class="weui-cell select-item select-area-item" style="padding-left: 30px;">
+			   <div class="weui-cell select-item select-area-item" style="padding-left: 30px;">
                 <div class="weui-cell__bd">
                     <p>#name</p>
-                </div><a class="weui-swiped-btn weui-swiped-btn_warn" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn area-btn" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
  			</div>
 			</div>
-			
-			<div class="weui-cell select-area-item" style="padding-left: 30px;">
+			<div style="display: none" class="select-area-item"></div>
+			<div class="weui-cell select-item select-area-item" style="padding-left: 30px;">
                 <div class="weui-cell__bd">
                     <p>辽宁</p>
-                </div>
+                </div><!-- <a class="weui-swiped-btn weui-swiped-btn_warn" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a> -->
  			</div>
 			<div  class="weui-cell select-item select-area-item" style="padding-left: 30px;">
                 <div class="weui-cell__bd">
                     <p>北京</p>
-                </div><a class="weui-swiped-btn weui-swiped-btn_warn" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn area-btn" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
  			</div>
 			<div class="weui-cell select-item select-area-item" style="padding-left: 30px;">
                 <div class="weui-cell__bd">
                     <p>上海</p>
-                </div><a class="weui-swiped-btn weui-swiped-btn_warn"  style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn area-btn"  style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
  			</div>
 			<div class="weui-cell select-item select-area-item" style="padding-left: 30px;">
                 <div class="weui-cell__bd">
                     <p>广州</p>
-                </div><a class="weui-swiped-btn weui-swiped-btn_warn"  style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn area-btn"  style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
  			</div>
 			<div class="weui-cell select-item select-area-item" style="padding-left: 30px;">
                 <div class="weui-cell__bd">
                     <p>山东</p>
-                </div><a class="weui-swiped-btn weui-swiped-btn_warn"  style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn area-btn"  style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
  			</div>
 			<div class="weui-cell select-item select-area-item" style="padding-left: 30px;">
                 <div class="weui-cell__bd">
                     <p>深圳</p>
-                </div><a class="weui-swiped-btn weui-swiped-btn_warn"  style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn area-btn"  style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
  			</div>
 			
                
 			<div class="weui-cell" style="padding-top: 0px; padding-bottom: 0px;padding-right: 0px;">
-				<a  class="weui-cell weui-cell_access" href="javascript:;"style = "margin-top: 0px;;width: 100%;padding-left: 0px;">
+				<a id="professional-list" class="weui-cell weui-cell_access" href="javascript:;"style = "margin-top: 0px;;width: 100%;padding-left: 0px;">
                 <div id="zhuanyie" class="weui-cell__bd">
                     <p>意愿专业</p>
                 </div>
-				<div>最多选择3个(已选3个)</div>
+				<div>最多选择6个(已选<span id="professional_number">6</span>个)</div>
                 <div class="weui-cell__ft"><i class="weui-icon-warn"></i></div>
                </a>
 			</div>
-			
-			<div class="weui-cell select-item" style="padding-left: 30px;">
+			<div style="display: none" id="professional-item-template">
+			    <div class="weui-cell select-item select-professional-item" style="padding-left: 30px;">
+					<div class="weui-cell__bd">
+						<p>#name</p>
+					</div><a class="weui-swiped-btn weui-swiped-btn_warn professional-btn" href="javascript:" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+				</div>
+			</div>
+			<div style="display: none" class="select-professional-item"></div>
+			<div class="weui-cell select-item select-professional-item" style="padding-left: 30px;">
                 <div class="weui-cell__bd">
                     <p>电气自动化类</p>
-                </div><a class="weui-swiped-btn weui-swiped-btn_warn" href="javascript:" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn professional-btn" href="javascript:" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
  			</div>
-			<div class="weui-cell select-item" style="padding-left: 30px;">
+			<div class="weui-cell select-item select-professional-item" style="padding-left: 30px;">
                 <div class="weui-cell__bd">
                     <p>机械类</p>
-                </div><a class="weui-swiped-btn weui-swiped-btn_warn" href="javascript:" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn professional-btn" href="javascript:" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
  			</div>
-			<div class="weui-cell select-item" style="padding-left: 30px;">
+			<div class="weui-cell select-item select-professional-item" style="padding-left: 30px;">
                 <div class="weui-cell__bd">
                     <p>计算机类</p>
-                </div><a class="weui-swiped-btn weui-swiped-btn_warn" href="javascript:" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn professional-btn" href="javascript:" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
  			</div>
-			<!-- <div class="weui-cell" style="padding-left: 30px;"> -->
-                <!-- <div class="weui-cell__bd"> -->
-                    <!-- <p>意愿专业</p> -->
-                <!-- </div><a class="weui-swiped-btn weui-swiped-btn_warn" href="javascript:" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a> -->
- 			<!-- </div> -->
+			<div class="weui-cell select-item select-professional-item" style="padding-left: 30px;">
+                <div class="weui-cell__bd">
+                    <p>电子商务</p>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn professional-btn" href="javascript:" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+ 			</div>
+			<div class="weui-cell select-item select-professional-item" style="padding-left: 30px;">
+                <div class="weui-cell__bd">
+                    <p>物联网工程</p>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn professional-btn" href="javascript:" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+ 			</div>
+			<div class="weui-cell select-item select-professional-item" style="padding-left: 30px;">
+                <div class="weui-cell__bd">
+                    <p>哲学类</p>
+                </div><a class="weui-swiped-btn weui-swiped-btn_warn professional-btn" href="javascript:" style="padding-top: 1px; padding-bottom: 1px; padding-right: 2px;padding-left: 2px;">删除</a>
+ 			</div>
     </div>
 	<div class="weui-btn-area">
 	   <a id="formSubmitBtn" href="javascript:" class="weui-btn weui-btn_primary btn-color">下一步</a>
@@ -163,45 +180,86 @@
 <script type="text/javascript" src="./js/common.js"></script>
 <!-- http://www.css88.com/doc/zeptojs_api/ -->
 <script type="text/javascript">
-function remove_click(){
-	$('.select-item').each(function(index){
+function item_click(item_class, func){
+	$('.'+item_class).each(function(index){
 		 $(this).on('click', function(e){
-			$(this).remove();
+			$(this).closest('div').remove();
+			func();
 		});
 	 });
 }
+
+function area_number(){
+  $('#area_number').text($('.select-area-item').size()-2);
+}
+
+function professional_number(){
+  $('#professional_number').text($('.select-professional-item').size()-2);
+}
+
+function get_area_number(){
+  return $('.select-area-item').size()-2;
+}
+
+function item_append(template_id, item_click_class, item_class, maps, func){
+    item = $('#' + template_id).html();
+	
+	maps.forEach(function (value, key, map) {
+        item = item.replace(new RegExp(key,"igm"), value);
+    });
+	$('.'+item_class).last().after(item);
+	item_click('weui-swiped-btn', func);
+	func();
+}
+ 
+function area_list_click(name){
+    var m = new Map();
+	m.set('#name', name);
+	item_append('area-item-template', 'area-btn', 'select-area-item', m, area_number);
+} 
+
+function professional_list_click(name){
+    var m = new Map();
+	m.set('#name', name);
+	item_append('professional-item-template', 'professional-btn', 'select-professional-item', m, professional_number);
+} 
+
 Zepto(function($){
   
-  remove_click();
+  item_click('area-btn', area_number);
+  item_click('professional-btn', professional_number);
   $('#area-list').on('click', function(e){
+        if(get_area_number() >= 6) return;
 		weui.actionSheet([
 		{
 			label: '北京',
 			onClick: function () {
 				console.log('北京');
-				item = $('#area-item-template').html();
-				$('.select-area-item').last().after(item.replace(/#name/ig, '北京1'));
-				remove_click();
+				area_list_click('北京');
 			}
 		}, {
 			label: '上海',
 			onClick: function () {
 				console.log('上海');
+				area_list_click('上海');
 			}
 		}, {
 			label: '广州',
 			onClick: function () {
 				console.log('广州');
+				area_list_click('广州');
 			}
 		}, {
 			label: '山东',
 			onClick: function () {
 				console.log('山东');
+				area_list_click('山东');
 			}
 		}, {
 			label: '深圳',
 			onClick: function () {
 				console.log('深圳');
+				area_list_click('深圳');
 			}
 		}
 		], [
@@ -219,7 +277,60 @@ Zepto(function($){
 		});    
   });
   
-  
+  $('#professional-list').on('click', function(e){
+        if(get_area_number() >= 6) return;
+		weui.actionSheet([
+		{
+			label: '电气自动化类',
+			onClick: function () {
+				console.log('电气自动化类');
+				professional_list_click('电气自动化类');
+			}
+		}, {
+			label: '上机械类',
+			onClick: function () {
+				console.log('机械类');
+				professional_list_click('机械类');
+			}
+		}, {
+			label: '计算机类',
+			onClick: function () {
+				console.log('计算机类');
+				professional_list_click('计算机类');
+			}
+		}, {
+			label: '电子商务',
+			onClick: function () {
+				console.log('电子商务');
+				professional_list_click('电子商务');
+			}
+		}, {
+			label: '物联网工程',
+			onClick: function () {
+				console.log('物联网工程');
+				professional_list_click('物联网工程');
+			}
+		}, {
+			label: '哲学类',
+			onClick: function () {
+				console.log('哲学类');
+				professional_list_click('哲学类');
+			}
+		}
+		], [
+			{
+				label: '取消',
+				onClick: function () {
+					console.log('取消');
+				}
+			}
+		], {
+			className: 'custom-classname',
+			onClose: function(){
+				console.log('关闭');
+			}
+		});    
+  });
   
   
   
