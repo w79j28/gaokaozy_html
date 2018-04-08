@@ -9,20 +9,7 @@
 <link rel="stylesheet" href="css/app.css">
 
 <script>
-function repeat(){
-var audio = document.getElementById('music'); 
-audio.currentTime = 0;//重新播放
-}
-function control(){
-var audio = document.getElementById('music'); 
-if(audio!==null){ 
-if(audio.paused){ 
-audio.play();// 播放 
-}else{
-audio.pause();// 暂停
-}
-} 
-}
+
 
 </script>
 </head>
@@ -35,7 +22,7 @@ audio.pause();// 暂停
 				<!-- </div> -->
                 <div class="weui-cell__bd">
 				    <audio src="audio/1.mp3" preload id="music" hidden></audio>
-                    <p>列表 1列表 1列表 1列表 1列表 1列表 1 <img alt="" src="images/laba-lv.png" width="25px" height="25px" onclick="control();"></img></p>
+                    <p>列表 1列表 1列表 1列表 1列表 1列表 1 <img alt="" src="images/laba-lv.png" width="25px" height="25px" onclick="audio_control();"></img></p>
                 </div>
                 <div class="weui-cell__ft">
                 </div>
