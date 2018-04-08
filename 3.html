@@ -201,6 +201,10 @@ function get_area_number(){
   return $('.select-area-item').size()-2;
 }
 
+function get_professional_number(){
+  return $('.select-professional-item').size()-2;
+}	
+
 function item_append(template_id, item_click_class, item_class, maps, func){
     item = $('#' + template_id).html();
 	
@@ -278,7 +282,7 @@ Zepto(function($){
   });
   
   $('#professional-list').on('click', function(e){
-        if(get_area_number() >= 6) return;
+        if(get_professional_number() >= 6) return;
 		weui.actionSheet([
 		{
 			label: '电气自动化类',
