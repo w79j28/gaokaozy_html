@@ -6,13 +6,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
 <script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+<script type="text/javascript" src="js/audio.js"></script>
 <link rel="stylesheet" href="css/app.css">
 </head>
 <body ontouchstart>
 <div class="container">
         <div class="weui-flex">
             <div class="weui-flex__item" >
-				<div style="position:absolute; right:10px; top:8px;"><img alt="" src="images/laba-lv.png" width="30px" height="30px" onclick="control();"></img></div>
+                 <audio src="audio/1.mp3" preload id="music" hidden></audio>
+				<div style="position:absolute; right:10px; top:8px;"><img alt="" src="images/laba-lv.png" width="30px" height="30px" onclick="audio_control();"></img></div>
 				<div style="left:0;top:0;" class="placeholder">注 册</div>
 			</div>
         </div>

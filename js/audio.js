@@ -12,8 +12,8 @@ function audio_control(){
 		}
 	} 
 }
-audio_html_str = '<audio src="#file" preload id="music" hidden></audio>';
+/*audio_html_str = '<audio src="#file" preload id="music" hidden></audio>';
 function audio_js(file){
 	audio_str = audio_html_str.replace(new RegExp('#file',"igm"), file);
 	document.write(audio_str);
-}
+}*/
