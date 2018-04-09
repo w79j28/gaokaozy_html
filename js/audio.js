@@ -1,9 +1,9 @@
-function audio_repeat(){
-	var audio = document.getElementById('music'); 
+function audio_repeat(id){
+	var audio = document.getElementById(id); 
 	audio.currentTime = 0;// replay
 }
-function audio_control(){
-	var audio = document.getElementById('music'); 
+function audio_control(id){
+	var audio = document.getElementById(id); 
 	if(audio!==null){ 
 		if(audio.paused){ 
 			audio.play();// play
