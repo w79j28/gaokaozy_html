@@ -1,1 +1,1 @@
-var SERVICE_URL = "http://w79j28.tunnel.qydev.com";
+var SERVICE_URL = "http://a0f61c09.ngrok.io";
