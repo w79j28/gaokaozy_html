@@ -35,12 +35,12 @@ var SERVICE_URL = "http://a0f61c09.ngrok.io";
 	else{
 	    var auth = sessionStorage.Authorization;
 	    alert('auth:' + auth);
+	    alert(location.href);
+	    $.get(SERVICE_URL + '/wechat/portal/oauth/url?url=' + location.href, function(response, status){
+	    	alert(status);
+	    	window.location.replace(response);
+	    },'jsonp');
 		if(auth == null){
-			alert(location.href);
-			$.get(SERVICE_URL + '/wechat/portal/oauth/url?url=' + location.href, function(response, status){
-				alert(status);
-				window.location.replace(response);
-			},'jsonp');
         }
 	   else{
 		   // normal
