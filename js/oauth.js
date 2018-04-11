@@ -24,8 +24,8 @@ function getQueryString() {
    }
    return args;
 }
+var SERVICE_URL = "http://a0f61c09.ngrok.io";
 
-Zepto(function($){
 	var qs = getQueryString();
 	if(qs['code'] != null){
 		$.get(SERVICE_URL + '/wechat/portal/oauth/accesstoken?code=' + qs['code'], function(response){
@@ -47,4 +47,4 @@ Zepto(function($){
 			
    }
     
-})
+
