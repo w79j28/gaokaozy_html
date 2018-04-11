@@ -124,7 +124,7 @@ Zepto(function($){
 	   weui.alert(SERVICE_URL);
 	   $.post(SERVICE_URL+'/postgreeting', { content: 'payload', id: 999 }, function(response){
 		  weui.alert(response);
-		})
+		}, 'json')
   });
   
   $('#myschool').on('click', function(e){
