@@ -129,7 +129,7 @@ Zepto(function($){
 				  //dataType: 'json',
 				  timeout: 5000,
 				  //contentType : false,
-				  headers: {'Content-Type': 'application/json', 'Origin':  location.protocol+"//"+location.host},
+				  headers: {'Content-Type': 'application/json', 'Origin': location.protocol+"//"+location.host, 'Access-Control-Request-Method':'POST', 'Access-Control-Request-Headers':'origin, content-type, accept, authorization, Pragma, Cache-control, Expires'},
 				  context: $('body'),
 				  success: function(response){
 					// Supposing this JSON payload was received:
