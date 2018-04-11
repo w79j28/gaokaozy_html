@@ -62,7 +62,7 @@ var SERVICE_URL = "http://www.wjz.com:9090";
 					alert(data);
 				  },
 				  error: function(xhr, type){
-					alert('Ajax error!'+xhr)
+					alert('Ajax error! error='+xhr)
 				  }
 			});
 
