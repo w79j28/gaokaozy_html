@@ -22,7 +22,7 @@ function getQueryString() {
    }
    return args;
 }
-var SERVICE_URL = "http://a0f61c09.ngrok.io";
+var SERVICE_URL = "http://www.wjz.com:9090";
 
 	var qs = getQueryString();
 	alert('code:' + qs['code'])
@@ -36,12 +36,12 @@ var SERVICE_URL = "http://a0f61c09.ngrok.io";
 	    var auth = sessionStorage.Authorization;
 	    alert('auth:' + auth);
 	    alert(location.href);
-	    $.get(SERVICE_URL + '/wechat/portal/oauth/url', {url: location.href}, function(response){
-	    	
-	    	alert(response);
-	    	window.location.replace(response);
-	    },'jsonp');
+	    
 		if(auth == null){
+			$.get(SERVICE_URL + '/wechat/portal/oauth/url', {url: location.href}, function(response){
+				//alert(response);
+				window.location.replace(response);
+			});
         }
 	   else{
 		   // normal
