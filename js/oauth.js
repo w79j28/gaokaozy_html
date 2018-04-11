@@ -1,11 +1,9 @@
-var ua = window.navigator.userAgent.toLowerCase(); 
-if (ua.match(/MicroMessenger/i) == 'micromessenger') { 
-	//
-} else { 
-   window.stop ? window.stop() : document.execCommand("Stop");
-} 
-
-document.write ('<script src="js/config.js"></script>')
+//var ua = window.navigator.userAgent.toLowerCase(); 
+//if (ua.match(/MicroMessenger/i) == 'micromessenger') { 
+//	//
+//} else { 
+//   window.stop ? window.stop() : document.execCommand("Stop");
+//} 
 
 function getQueryString() {  
     var qs = location.search.substr(1), //
@@ -35,8 +33,9 @@ var SERVICE_URL = "http://a0f61c09.ngrok.io";
 	}
 	else{
 	    var auth = sessionStorage.Authorization;
-	    alert('auth:' + auth)
+	    alert('auth:' + auth);
 		if(auth == null){
+			alert(location.href);
 			$.get(SERVICE_URL + '/wechat/portal/oauth/url?url=' + location.href, function(response){
 				window.location.replace(response);
 			});
