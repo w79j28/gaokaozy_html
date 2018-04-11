@@ -27,14 +27,15 @@ var SERVICE_URL = "http://a0f61c09.ngrok.io";
 	var qs = getQueryString();
 	alert('code:' + qs['code'])
 	if(qs['code'] != null){
+		alert('code num ' + qs['code'] )
 		$.get(SERVICE_URL + '/wechat/portal/oauth/accesstoken?code=' + qs['code'], function(response){
 			sessionStorage.Authorization = response;
-		});
+		},'jsonp');
 	}
 	else{
 	    var auth = sessionStorage.Authorization;
 	    alert('auth:' + auth);
-		if(auth == 'undefined'){
+		if(auth == null){
 			alert(location.href);
 			$.get(SERVICE_URL + '/wechat/portal/oauth/url?url=' + location.href, function(response, status){
 				alert(status);
