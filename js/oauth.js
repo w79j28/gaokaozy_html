@@ -53,6 +53,7 @@ var SERVICE_URL = "http://www.wjz.com:9090";
 				  //dataType: 'json',
 				  timeout: 300,
 				  context: $('body'),
+				  headers:{"Origin": location.protocol+"//"+location.host},
 				  success: function(data){
 					// Supposing this JSON payload was received:
 					//   {"project": {"id": 42, "html": "<div>..." }}
@@ -61,7 +62,7 @@ var SERVICE_URL = "http://www.wjz.com:9090";
 					alert(data);
 				  },
 				  error: function(xhr, type){
-					alert('Ajax error!')
+					alert('Ajax error!'+xhr)
 				  }
 			});
 
