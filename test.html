@@ -13,7 +13,6 @@
 </div>
 <script type="text/javascript" src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
 <!-- http://www.css88.com/doc/zeptojs_api/ -->
-<script type="text/javascript" src="js/oauth.js"></script>
 <script type="text/javascript">
 Zepto(function($){
 
@@ -21,9 +20,28 @@ Zepto(function($){
 	  <!-- //$(document.body).append(response) -->
 	  <!-- window.location.replace(response); -->
 	<!-- }) -->
-    $('#mybtn').on('click', function(e){
-	    window.location =('t2.html');
-	});
+    $.ajax({
+				  type: 'POST',
+				  url: "http://wang79j28.tunnel.qydev.com" + '/postgreeting',
+				  // data to be added to query string:
+				  data: '{ "content": "payload", "id": 999 }',
+				  // type of data we are expecting in return:
+				  //dataType: 'json',
+				  timeout: 5000,
+				  //contentType : false,
+				  headers: {'Content-Type': 'application/json', 'Origin':  location.protocol+"//"+location.host},
+				  context: $('body'),
+				  success: function(response){
+					// Supposing this JSON payload was received:
+					//   {"project": {"id": 42, "html": "<div>..." }}
+					// append the HTML to context object.
+					//this.append(data.project.html)
+					alert((response).body.id);
+				  },
+				  error: function(xhr, type){
+					alert('error!:'+JSON.stringify(xhr) + ', type' + JSON.stringify(type))
+				  }
+			});
 })
 
 </script>

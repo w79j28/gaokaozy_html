@@ -124,11 +124,11 @@ Zepto(function($){
 				  type: 'POST',
 				  url: SERVICE_URL + '/postgreeting',
 				  // data to be added to query string:
-				  data: { "content": "payload", "id": 999 },
+				  data: '{ "content": "payload", "id": 999 }',
 				  // type of data we are expecting in return:
 				  //dataType: 'json',
 				  timeout: 5000,
-				  contentType : false,
+				  //contentType : false,
 				  headers: {'Content-Type': 'application/json', 'Origin':  location.protocol+"//"+location.host},
 				  context: $('body'),
 				  success: function(response){
@@ -136,7 +136,7 @@ Zepto(function($){
 					//   {"project": {"id": 42, "html": "<div>..." }}
 					// append the HTML to context object.
 					//this.append(data.project.html)
-					alert(response);
+					alert(JSON.stringify(response));
 				  },
 				  error: function(xhr, type){
 					alert('error!:'+JSON.stringify(xhr) + ', type' + JSON.stringify(type))
