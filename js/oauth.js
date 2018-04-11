@@ -34,7 +34,7 @@ var SERVICE_URL = "http://a0f61c09.ngrok.io";
 	else{
 	    var auth = sessionStorage.Authorization;
 	    alert('auth:' + auth);
-		if(auth == null){
+		if(auth == 'undefined'){
 			alert(location.href);
 			$.get(SERVICE_URL + '/wechat/portal/oauth/url?url=' + location.href, function(response){
 				window.location.replace(response);
