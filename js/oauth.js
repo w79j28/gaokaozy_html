@@ -30,6 +30,10 @@ var SERVICE_URL = "http://wang79j28.tunnel.qydev.com";
 		alert('code num :' + qs['code'] )
 		$.get(SERVICE_URL + '/wechat/portal/oauth/accesstoken?code=' + qs['code'], function(response){
 			sessionStorage.Authorization = response;
+			delete qs['code'];
+			alert(location.pathname + "?" +  $.param(qs));
+			location.replace = location.pathname + "?" +  $.param(qs);
+			
 		});
 	}
 	else{
