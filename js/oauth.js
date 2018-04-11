@@ -36,7 +36,8 @@ var SERVICE_URL = "http://a0f61c09.ngrok.io";
 	    alert('auth:' + auth);
 		if(auth == 'undefined'){
 			alert(location.href);
-			$.get(SERVICE_URL + '/wechat/portal/oauth/url?url=' + location.href, function(response){
+			$.get(SERVICE_URL + '/wechat/portal/oauth/url?url=' + location.href, function(response, status){
+				alert(status);
 				window.location.replace(response);
 			});
         }
