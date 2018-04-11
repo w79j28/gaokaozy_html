@@ -27,6 +27,7 @@ function getQueryString() {
 var SERVICE_URL = "http://a0f61c09.ngrok.io";
 
 	var qs = getQueryString();
+	alert('code:' + qs['code'])
 	if(qs['code'] != null){
 		$.get(SERVICE_URL + '/wechat/portal/oauth/accesstoken?code=' + qs['code'], function(response){
 			sessionStorage.Authorization = response;
@@ -34,6 +35,7 @@ var SERVICE_URL = "http://a0f61c09.ngrok.io";
 	}
 	else{
 	    var auth = sessionStorage.Authorization;
+	    alert('auth:' + auth)
 		if(auth == null){
 			$.get(SERVICE_URL + '/wechat/portal/oauth/url?url=' + location.href, function(response){
 				window.location.replace(response);
