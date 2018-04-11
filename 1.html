@@ -120,7 +120,7 @@ Zepto(function($){
   elem.on('click', function(e){ 
         //
        //window.location.replace('2.html');
-	   weui.alert(sessionStorage.Authorization);
+	   alert(sessionStorage.Authorization);
        $.ajax({
 				  type: 'POST',
 				  url: SERVICE_URL + '/postgreeting',
