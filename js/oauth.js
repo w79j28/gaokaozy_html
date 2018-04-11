@@ -32,7 +32,7 @@ var SERVICE_URL = "http://wang79j28.tunnel.qydev.com";
 			sessionStorage.Authorization = response;
 			delete qs['code'];
 			alert(location.pathname + "?" +  $.param(qs));
-			location.replace = location.pathname + "?" +  $.param(qs);
+			window.location.replace(location.pathname + "?" +  $.param(qs));
 			
 		});
 	}
@@ -59,7 +59,7 @@ var SERVICE_URL = "http://wang79j28.tunnel.qydev.com";
 					//   {"project": {"id": 42, "html": "<div>..." }}
 					// append the HTML to context object.
 					//this.append(data.project.html)
-					window.location.replace(response);;
+					window.location.replace(response);
 				  },
 				  error: function(xhr, type){
 					alert('Ajax error! error=55:'+JSON.stringify(xhr) + ', type' + JSON.stringify(type))
