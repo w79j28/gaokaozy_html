@@ -22,6 +22,10 @@ function getQueryString() {
    }
    return args;
 }
+
+function callback(resp){
+	alert("resp=" + resp)
+}
 var SERVICE_URL = "http://www.wjz.com:9090";
 
 	var qs = getQueryString();
@@ -50,7 +54,7 @@ var SERVICE_URL = "http://www.wjz.com:9090";
 				  // data to be added to query string:
 				  data: {url: location.href},
 				  // type of data we are expecting in return:
-				  //dataType: 'json',
+				  dataType: 'jsonp',
 				  timeout: 300,
 				  context: $('body'),
 				  headers:{"Origin": location.protocol+"//"+location.host},
