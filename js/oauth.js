@@ -26,12 +26,11 @@ function getQueryString() {
 var SERVICE_URL = "http://wang79j28.tunnel.qydev.com";
 
 	var qs = getQueryString();
-	alert('44code:' + qs['code'])
 	if(qs['code'] != null){
-		alert('code num ' + qs['code'] )
+		alert('code num :' + qs['code'] )
 		$.get(SERVICE_URL + '/wechat/portal/oauth/accesstoken?code=' + qs['code'], function(response){
 			sessionStorage.Authorization = response;
-		},'jsonp');
+		});
 	}
 	else{
 	    var auth = sessionStorage.Authorization;
@@ -39,11 +38,8 @@ var SERVICE_URL = "http://wang79j28.tunnel.qydev.com";
 	    
 	    
 		if(auth == null){
-			alert("auth:" + auth + ", href:" +location.href);
-			// $.get(SERVICE_URL + '/wechat/portal/oauth/url', {url: location.href}, function(response){
-				//alert(response);
-				// window.location.replace(response);
-			// });
+			alert("55auth:" + auth + ", href:" +location.href);
+			
 			
 			$.ajax({
 				  type: 'GET',
@@ -54,18 +50,18 @@ var SERVICE_URL = "http://wang79j28.tunnel.qydev.com";
 				  //dataType: 'jsonp',
 				  timeout: 300,
 				  context: $('body'),
-				  //headers:{"Origin": location.protocol+"//"+location.host},
-				  success: function(data){
+				  success: function(response){
 					// Supposing this JSON payload was received:
 					//   {"project": {"id": 42, "html": "<div>..." }}
 					// append the HTML to context object.
 					//this.append(data.project.html)
-					alert(data);
+					window.location.replace(response);;
 				  },
 				  error: function(xhr, type){
-					alert('Ajax error! error=44:'+JSON.stringify(xhr) + ', type' + JSON.stringify(type))
+					alert('Ajax error! error=55:'+JSON.stringify(xhr) + ', type' + JSON.stringify(type))
 				  }
 			});
+			
 
         }
 	   else{
