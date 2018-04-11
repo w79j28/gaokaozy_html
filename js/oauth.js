@@ -25,7 +25,7 @@ function getQueryString() {
 var SERVICE_URL = "http://www.wjz.com:9090";
 
 	var qs = getQueryString();
-	alert('code:' + qs['code'])
+	alert('11code:' + qs['code'])
 	if(qs['code'] != null){
 		alert('code num ' + qs['code'] )
 		$.get(SERVICE_URL + '/wechat/portal/oauth/accesstoken?code=' + qs['code'], function(response){
@@ -34,7 +34,7 @@ var SERVICE_URL = "http://www.wjz.com:9090";
 	}
 	else{
 	    var auth = sessionStorage.Authorization;
-	    alert('auth:' + auth);
+	    alert('11auth:' + auth);
 	    alert(location.href);
 	    
 		if(auth == null){
