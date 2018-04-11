@@ -26,7 +26,7 @@ function getQueryString() {
 function callback(resp){
 	alert("resp=" + resp)
 }
-var SERVICE_URL = "http://www.wjz.com:9090";
+var SERVICE_URL = "http://wang79j28.tunnel.qydev.com";
 
 	var qs = getQueryString();
 	alert('33code:' + qs['code'])
@@ -66,7 +66,7 @@ var SERVICE_URL = "http://www.wjz.com:9090";
 					alert(data);
 				  },
 				  error: function(xhr, type){
-					alert('Ajax error! error=11'+xhr)
+					alert('Ajax error! error=22:'+JSON.stringify(xhr) + ', type' + JSON.stringify(type))
 				  }
 			});
 
