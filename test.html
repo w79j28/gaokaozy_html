@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
 <script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
-<link rel="stylesheet" href="css/app.css">
+
 </head>
 <body ontouchstart>
 <div class="container">
@@ -13,15 +13,21 @@
 </div>
 <script type="text/javascript" src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
 <!-- http://www.css88.com/doc/zeptojs_api/ -->
+<script type="text/javascript" src="js/oauth.js"></script>
 <script type="text/javascript">
 Zepto(function($){
 
-   $.get('http://w79j28.tunnel.qydev.com/wechat/portal/auth_url?url=http://w79j28.tunnel.qydev.com/list.html', function(response){
-	  //$(document.body).append(response)
-	  window.location.replace(response);
-	})
-  
+   <!-- $.get('http://w79j28.tunnel.qydev.com/wechat/portal/auth_url?url=https://w79j28.github.io/gaokaozy_html/list.html', function(response){ -->
+	  <!-- //$(document.body).append(response) -->
+	  <!-- window.location.replace(response); -->
+	<!-- }) -->
+    $('#mybtn').on('click', function(e){
+	    window.location =('t2.html');
+	});
 })
+
 </script>
+<br/>
+<button id="mybtn">---go---</button>
 </body>
 </html>

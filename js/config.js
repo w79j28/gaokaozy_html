@@ -1,0 +1,1 @@
+var SERVICE_URL = "http://w79j28.tunnel.qydev.com";
