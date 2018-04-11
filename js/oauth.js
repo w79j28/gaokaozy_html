@@ -65,7 +65,7 @@ function oauth(){
 				  data: {url: location.href},
 				  // type of data we are expecting in return:
 				  //dataType: 'jsonp',
-				  timeout: 300,
+				  timeout: 5000,
 				  context: $('body'),
 				  success: function(response){
 					// Supposing this JSON payload was received:
