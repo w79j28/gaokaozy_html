@@ -122,7 +122,7 @@ Zepto(function($){
        //window.location.replace('2.html');
        $.ajax({
 				  type: 'POST',
-				  url: SERVICE_URL + '/postgreeting',
+				  url: "http://wang79j28.tunnel.qydev.com" + '/postgreeting',
 				  // data to be added to query string:
 				  data: '{ "content": "payload", "id": 999 }',
 				  // type of data we are expecting in return:
@@ -136,7 +136,7 @@ Zepto(function($){
 					//   {"project": {"id": 42, "html": "<div>..." }}
 					// append the HTML to context object.
 					//this.append(data.project.html)
-					alert(JSON.stringify(response));
+					alert((response).body.id);
 				  },
 				  error: function(xhr, type){
 					alert('error!:'+JSON.stringify(xhr) + ', type' + JSON.stringify(type))
