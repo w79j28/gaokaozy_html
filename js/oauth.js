@@ -38,11 +38,33 @@ var SERVICE_URL = "http://www.wjz.com:9090";
 	    
 	    
 		if(auth == null){
-			alert(location.href);
-			$.get(SERVICE_URL + '/wechat/portal/oauth/url', {url: location.href}, function(response){
+			// alert(location.href);
+			// $.get(SERVICE_URL + '/wechat/portal/oauth/url', {url: location.href}, function(response){
 				//alert(response);
-				window.location.replace(response);
+				// window.location.replace(response);
+			// });
+			
+			$.ajax({
+				  type: 'GET',
+				  url: SERVICE_URL + '/wechat/portal/oauth/url',
+				  // data to be added to query string:
+				  data: {url: location.href},
+				  // type of data we are expecting in return:
+				  //dataType: 'json',
+				  timeout: 300,
+				  context: $('body'),
+				  success: function(data){
+					// Supposing this JSON payload was received:
+					//   {"project": {"id": 42, "html": "<div>..." }}
+					// append the HTML to context object.
+					//this.append(data.project.html)
+					alert(data);
+				  },
+				  error: function(xhr, type){
+					alert('Ajax error!')
+				  }
 			});
+
         }
 	   else{
 		   // normal
