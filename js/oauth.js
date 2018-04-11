@@ -78,7 +78,6 @@ function oauth(){
 					alert('error!:'+JSON.stringify(xhr) + ', type' + JSON.stringify(type))
 				  }
 			});
-			window.stop ? window.stop() : document.execCommand("Stop");
 		}
 	   else{
 		   // normal
