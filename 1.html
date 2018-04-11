@@ -129,7 +129,8 @@ Zepto(function($){
 				  // type of data we are expecting in return:
 				  dataType: 'json',
 				  timeout: 300,
-				  contentType : 'application/json',
+				  contentType : false,
+				  headers: {'Content-Type': 'application/json'},
 				  context: $('body'),
 				  success: function(response){
 					// Supposing this JSON payload was received:
