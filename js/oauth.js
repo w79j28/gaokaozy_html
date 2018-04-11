@@ -23,13 +23,10 @@ function getQueryString() {
    return args;
 }
 
-function callback(resp){
-	alert("resp=" + resp)
-}
 var SERVICE_URL = "http://wang79j28.tunnel.qydev.com";
 
 	var qs = getQueryString();
-	alert('33code:' + qs['code'])
+	alert('44code:' + qs['code'])
 	if(qs['code'] != null){
 		alert('code num ' + qs['code'] )
 		$.get(SERVICE_URL + '/wechat/portal/oauth/accesstoken?code=' + qs['code'], function(response){
@@ -66,7 +63,7 @@ var SERVICE_URL = "http://wang79j28.tunnel.qydev.com";
 					alert(data);
 				  },
 				  error: function(xhr, type){
-					alert('Ajax error! error=33:'+JSON.stringify(xhr) + ', type' + JSON.stringify(type))
+					alert('Ajax error! error=44:'+JSON.stringify(xhr) + ', type' + JSON.stringify(type))
 				  }
 			});
 
