@@ -4,7 +4,7 @@
 //} else { 
 //   window.stop ? window.stop() : document.execCommand("Stop");
 //} 
-
+document.write('<script type="text/javascript" src="js/config.js"></script>');
 function getQueryString() {  
     var qs = location.search.substr(1), //
     args = {}, //
@@ -23,7 +23,7 @@ function getQueryString() {
    return args;
 }
 
-var SERVICE_URL = "http://wang79j28.tunnel.qydev.com";
+
 
 	var qs = getQueryString();
 	if(qs['code'] != null){
@@ -42,7 +42,7 @@ var SERVICE_URL = "http://wang79j28.tunnel.qydev.com";
 	    
 	    
 		if(auth == null){
-			alert("55auth:" + auth + ", href:" +location.href);
+			alert("55auth:" + auth + ", href:" +location.href + ", surl:" + SERVICE_URL);
 			
 			
 			$.ajax({
