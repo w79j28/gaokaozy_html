@@ -120,7 +120,6 @@ Zepto(function($){
   elem.on('click', function(e){ 
         //
        //window.location.replace('2.html');
-	   alert(sessionStorage.Authorization);
        $.ajax({
 				  type: 'POST',
 				  url: SERVICE_URL + '/postgreeting',
@@ -137,7 +136,7 @@ Zepto(function($){
 					//   {"project": {"id": 42, "html": "<div>..." }}
 					// append the HTML to context object.
 					//this.append(data.project.html)
-					weui.alert(response);
+					alert(response);
 				  },
 				  error: function(xhr, type){
 					alert('error!:'+JSON.stringify(xhr) + ', type' + JSON.stringify(type))
