@@ -54,10 +54,10 @@ var SERVICE_URL = "http://wang79j28.tunnel.qydev.com";
 				  // data to be added to query string:
 				  data: {url: location.href},
 				  // type of data we are expecting in return:
-				  dataType: 'jsonp',
+				  //dataType: 'jsonp',
 				  timeout: 300,
 				  context: $('body'),
-				  headers:{"Origin": location.protocol+"//"+location.host},
+				  //headers:{"Origin": location.protocol+"//"+location.host},
 				  success: function(data){
 					// Supposing this JSON payload was received:
 					//   {"project": {"id": 42, "html": "<div>..." }}
@@ -66,7 +66,7 @@ var SERVICE_URL = "http://wang79j28.tunnel.qydev.com";
 					alert(data);
 				  },
 				  error: function(xhr, type){
-					alert('Ajax error! error=22:'+JSON.stringify(xhr) + ', type' + JSON.stringify(type))
+					alert('Ajax error! error=33:'+JSON.stringify(xhr) + ', type' + JSON.stringify(type))
 				  }
 			});
 
