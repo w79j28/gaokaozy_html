@@ -47,11 +47,9 @@ function getQueryString() {
 function oauth(){
 	var qs = getQueryString();
 	if(qs['code'] != null){
-		alert('code num :' + qs['code'] )
 		$.get(SERVICE_URL + '/wechat/portal/oauth/accesstoken?code=' + qs['code'], function(response){
 			sessionStorage.Authorization = response;
 			delete qs['code'];
-			alert(location.pathname + "?" +  $.param(qs));
 			window.location.replace(location.pathname + "?" +  $.param(qs));
 			
 		});
