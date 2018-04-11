@@ -124,9 +124,9 @@ Zepto(function($){
 				  type: 'POST',
 				  url: SERVICE_URL + '/postgreeting',
 				  // data to be added to query string:
-				  data: { content: 'payload', id: 999 },
+				  data: { "content": "payload", "id": 999 },
 				  // type of data we are expecting in return:
-				  dataType: 'json',
+				  //dataType: 'json',
 				  timeout: 5000,
 				  contentType : false,
 				  headers: {'Content-Type': 'application/json', 'Origin':  location.protocol+"//"+location.host},
