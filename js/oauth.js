@@ -45,43 +45,62 @@ function getQueryString() {
    return args;
 }
 
+var defaultTimeout = 1000*30;
+
+function httpClient(method, url, data, successfun, errorfun, timeout){
+	 if(!url){return;}
+	 if(!successfun){successfun=function(){}}
+	 if(!errorfun){errorfun=function(){}}
+	 if(!timeout){timeout=defaultTimeout;}
+	$.ajax({
+		  type: method,
+		  url: SERVICE_URL + url,
+		  data: data,
+		  timeout: timeout,
+		  context: $('body'),
+		  headers: {'Content-Type': 'application/json', 'Origin': location.protocol+"//"+location.host, 'Access-Control-Request-Method':method, 'Access-Control-Request-Headers':'origin, content-type, accept, authorization, Pragma, Cache-control, Expires'},
+		  success: function(response){
+			  successfun(response);
+		  },
+		  error: function(xhr, type){
+			//alert('error!:'+JSON.stringify(xhr) + ', type' + JSON.stringify(type))
+			  errorfun(xhr,type);
+		  }
+	});
+}
+
+function httpGet(url, data, successfun, errorfun, timeout){
+	httpClient('GET', url, data, successfun, errorfun, timeout);
+}
+
+function httpPost(url, data, successfun, errorfun, timeout){
+	httpClient('POST', url, data, successfun, errorfun, timeout);
+}
+
 
 function oauth(){
 	var qs = getQueryString();
 	if(qs['code'] != null){
-		$.get(SERVICE_URL + '/wechat/portal/oauth/accesstoken?code=' + qs['code'], function(response){
-			sessionStorage.Authorization = response;
-			delete qs['code'];
-			window.location.replace(location.pathname + "?" +  $.param(qs));
-			
-		});
+		httpGet('/wechat/portal/oauth/accesstoken', 
+				{code: qs['code']}, 
+				function(response){
+					sessionStorage.Authorization = response;
+					delete qs['code'];
+					window.location.replace(location.pathname + "?" +  $.param(qs));
+				}, 
+				function(xhr,type){});
 	}
 	else{
 		var auth = sessionStorage.Authorization;
 		if(auth == null){
-			
-			$.ajax({
-				  type: 'GET',
-				  url: SERVICE_URL + '/wechat/portal/oauth/url',
-				  // data to be added to query string:
-				  data: {url: location.href},
-				  // type of data we are expecting in return:
-				  //dataType: 'jsonp',
-				  timeout: 5000,
-				  context: $('body'),
-				  success: function(response){
-					// Supposing this JSON payload was received:
-					//   {"project": {"id": 42, "html": "<div>..." }}
-					// append the HTML to context object.
-					//this.append(data.project.html)
-					  
-					  window.location.replace(response);
-				  },
-				  error: function(xhr, type){
-					//alert('error!:'+JSON.stringify(xhr) + ', type' + JSON.stringify(type))
-					  window.location.reload()
-				  }
-			});
+			httpGet('/wechat/portal/oauth/url', 
+					{url: location.href}, 
+					function(response){
+						window.location.replace(response);
+					}, 
+					function(xhr,type){
+						window.location.reload();
+					});
 		}
 	   else{
 		   // normal
