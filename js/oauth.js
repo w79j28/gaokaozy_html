@@ -4,9 +4,7 @@ if (ua.match(/MicroMessenger/i) == 'micromessenger') {
 } else { 
   window.stop ? window.stop() : document.execCommand("Stop");
 } 
-var loading = weui.loading('loading', {
-    className: 'custom-classname'
-});
+
 function loadScript(url, callback){
 	callback=callback||function(){};
 	var script = document.createElement("script")
@@ -83,9 +81,7 @@ function oauth(){
 		}
 	   else{
 		   // normal
-		   loading.hide(function() {
-           //console.log('`loading` has been hidden');
-			});
+		   
 	   }	
 	}
 }   
