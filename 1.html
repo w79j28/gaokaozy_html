@@ -126,7 +126,7 @@ Zepto(function($){
        httpPost('/postgreeting', 
     		    '{ "content": "payload", "id": 999 }', 
     		    function(response){
-    		    	alert(response.data.id);
+    		    	alert(response.body.id);
     		    } 
     		    );
   });
