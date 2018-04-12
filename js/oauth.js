@@ -88,7 +88,8 @@ function oauth(){
 					  window.location.replace(response);
 				  },
 				  error: function(xhr, type){
-					alert('error!:'+JSON.stringify(xhr) + ', type' + JSON.stringify(type))
+					//alert('error!:'+JSON.stringify(xhr) + ', type' + JSON.stringify(type))
+					  window.location.reload()
 				  }
 			});
 		}
