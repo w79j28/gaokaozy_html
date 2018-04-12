@@ -2,12 +2,24 @@ function audio_repeat(id){
 	var audio = document.getElementById(id); 
 	audio.currentTime = 0;// replay
 }
+
+var interval_id;
+function checkAudioStop(id, img){
+	var audio = document.getElementById(id); 
+	if(audio!==null){
+		if(audio.paused){
+			img.src="images/laba0412.png";
+		}
+	}
+}
+
 function audio_control(id, img){
 	var audio = document.getElementById(id); 
 	if(audio!==null){ 
 		if(audio.paused){
 			img.src="images/laba0412.gif";
 			audio.play();// play
+			interval_id = window.setInterval(function() {checkAudioStop(id,img)},10);
 		}else{
 			img.src="images/laba0412.png";
 			audio.pause();// pause
