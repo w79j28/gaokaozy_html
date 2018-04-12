@@ -49,7 +49,7 @@ if(qs['code']){
 				
 				url = url + "?" + $.param(qs);
 				alert('url:'+url);
-				//window.location.replace(location.hash.substr(1) + "?" +  $.param(qs));
+				window.location.replace(url);
 			}, 
 			function(xhr,type){alert(type)});
 }
