@@ -44,7 +44,7 @@ function getQueryString() {
    return args;
 }
 
-
+var loading;
 function oauth(){
 	var qs = getQueryString();
 	if(qs['code'] != null){
@@ -81,7 +81,11 @@ function oauth(){
 		}
 	   else{
 		   // normal
-		   
+		   if(loading != null){
+			   loading.hide(function() {
+				   //console.log('`loading` has been hidden');
+			   });
+		   }
 	   }	
 	}
 }   
