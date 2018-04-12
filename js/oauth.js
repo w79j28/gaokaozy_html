@@ -58,6 +58,11 @@ function oauth(){
 	else{
 		var auth = sessionStorage.Authorization;
 		if(auth == null){
+			if(loading != null){
+				   loading.hide(function() {
+					   //console.log('`loading` has been hidden');
+				   });
+			}
 			$.ajax({
 				  type: 'GET',
 				  url: SERVICE_URL + '/wechat/portal/oauth/url',
