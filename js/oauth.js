@@ -89,4 +89,4 @@ function oauth(){
 	   }	
 	}
 }   
-loadScript("js/config.js", oauth);
+loadScript("js/config.js?20180412=2", oauth);
