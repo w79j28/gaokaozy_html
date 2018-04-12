@@ -5,11 +5,6 @@ if (ua.match(/MicroMessenger/i) == 'micromessenger') {
   window.stop ? window.stop() : document.execCommand("Stop");
 } 
 
-var loading;
-loading = weui.loading('loading', {
-    className: 'custom-classname'
-});
-
 function loadScript(url, callback){
 	callback=callback||function(){};
 	var script = document.createElement("script")
