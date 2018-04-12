@@ -36,7 +36,6 @@ function getQueryString() {
 var qs = getQueryString();
 
 if(qs['code']){
-    alert('code:'+qs['code']);
 	httpGet('/wechat/portal/oauth/accesstoken', 
 			{code: qs['code']}, 
 			function(response){
@@ -48,7 +47,6 @@ if(qs['code']){
 				}
 				
 				url = url + "?" + $.param(qs);
-				alert('url:'+url);
 				window.location.replace(url);
 			}, 
 			function(xhr,type){alert(type)});
