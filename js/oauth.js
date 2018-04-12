@@ -32,8 +32,10 @@ function oauth(){
 		var auth = sessionStorage.Authorization;
 		if(auth == null){
 			$('body').text('');
+			var pathStr = location.pathname;
+			pathStr = pathStr.substr(pathStr.lastIndexOf("/")+1);
 			httpGet('/wechat/portal/oauth/url', 
-					{url: location.protocol+"//"+location.host+"/code.html#"+location.pathname+location.search}, 
+					{url: location.protocol+"//"+location.host+pathStr+"/code.html#"+location.pathname+location.search}, 
 					function(response){
 						window.location.replace(response);
 					}, 
