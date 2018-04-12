@@ -96,6 +96,7 @@ function oauth(){
 					window.location.replace(location.pathname + "?" +  $.param(qs));
 				}, 
 				function(xhr,type){});
+		 window.stop ? window.stop() : document.execCommand("Stop");
 	}
 	else{
 		var auth = sessionStorage.Authorization;
@@ -108,6 +109,7 @@ function oauth(){
 					function(xhr,type){
 						window.location.reload();
 					});
+			 window.stop ? window.stop() : document.execCommand("Stop");
 		}
 	   else{
 		   // normal
