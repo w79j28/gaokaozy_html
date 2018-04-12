@@ -77,9 +77,7 @@ function oauth(){
 					//   {"project": {"id": 42, "html": "<div>..." }}
 					// append the HTML to context object.
 					//this.append(data.project.html)
-					  loading = weui.loading('loading', {
-						    className: 'custom-classname'
-					  });
+					  
 					  window.location.replace(response);
 				  },
 				  error: function(xhr, type){
@@ -98,4 +96,4 @@ function oauth(){
 	   }	
 	}
 }   
-loadScript("js/config.js?20180412=2", oauth);
+loadScript("js/config.js?20180412=10", oauth);
