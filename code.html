@@ -33,6 +33,7 @@ function getQueryString() {
    return args;
 }
 var qs = getQueryString();
+alert(qs['code']);
 if(qs['code'] != null){
 	httpGet('/wechat/portal/oauth/accesstoken', 
 			{code: qs['code']}, 
