@@ -40,9 +40,11 @@ if(qs['code'] != null){
 			function(response){
 				sessionStorage.Authorization = response;
 				delete qs['code'];
-				window.location.replace(location.hash.substr(1) + "?" +  $.param(qs));
+				var url = location.hash.substr(1) + "?" +  $.param(qs);
+				alert('url:'+url);
+				//window.location.replace(location.hash.substr(1) + "?" +  $.param(qs));
 			}, 
-			function(xhr,type){});
+			function(xhr,type){alert(type)});
 }
 </script>
 </body>
