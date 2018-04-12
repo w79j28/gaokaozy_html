@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="css/app.css">
 </head>
 <body ontouchstart>
-<script type="text/javascript" src="js/oauth.js?20180412=16"></script>
+<script type="text/javascript" src="js/oauth.js?20180412=17"></script>
 <div class="container">
         <div class="weui-flex">
             <div class="weui-flex__item" >
@@ -127,8 +127,7 @@ Zepto(function($){
     		    '{ "content": "payload", "id": 999 }', 
     		    function(response){
     		    	alert(response.body.id);
-    		    } 
-    		    );
+    		    });
   });
   
   $('#myschool').on('click', function(e){

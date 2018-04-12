@@ -45,8 +45,6 @@ function getQueryString() {
    return args;
 }
 
-var defaultTimeout = 1000*30;
-
 function httpClient(method, url, data, successfun, errorfun, timeout){
 	if(!url){return;}
 	if(!successfun){successfun=function(){}}
@@ -58,7 +56,7 @@ function httpClient(method, url, data, successfun, errorfun, timeout){
 		  data: data,
 		  timeout: timeout,
 		  context: $('body'),
-		  headers: {'Content-Type': 'application/json', 'Origin': location.protocol+"//"+location.host, 'Access-Control-Request-Method':method, 'Access-Control-Request-Headers':'origin, content-type, accept, authorization, Pragma, Cache-control, Expires'},
+		  headers: {'Content-Type': 'application/json', 'Origin': location.protocol+"//"+location.host, 'Access-Control-Request-Method':method, 'Access-Control-Request-Headers':'origin, content-type, accept, authorization, Pragma, Cache-control, Expires','Authorization':sessionStorage.Authorization},
 		  success: function(response){
 			  successfun(response);
 		  },
@@ -77,6 +75,13 @@ function httpPost(url, data, successfun, errorfun, timeout){
 	httpClient('POST', url, data, successfun, errorfun, timeout);
 }
 
+function httpPut(url, data, successfun, errorfun, timeout){
+	httpClient('PUT', url, data, successfun, errorfun, timeout);
+}
+
+function httpDelete(url, data, successfun, errorfun, timeout){
+	httpClient('DELETE', url, data, successfun, errorfun, timeout);
+}
 
 function oauth(){
 	var qs = getQueryString();
@@ -108,4 +113,4 @@ function oauth(){
 	   }	
 	}
 }   
-loadScript("js/config.js?20180412=10", oauth);
+loadScript("js/config.js?20180412=11", oauth);
