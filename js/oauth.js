@@ -58,7 +58,7 @@ function oauth(){
 	else{
 		var auth = sessionStorage.Authorization;
 		if(auth == null){
-			$('body').removeAttr('style');
+			
 			$.ajax({
 				  type: 'GET',
 				  url: SERVICE_URL + '/wechat/portal/oauth/url',
