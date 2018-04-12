@@ -19,6 +19,10 @@ function audio_control(id, img){
 		if(audio.paused){
 			img.src="images/laba0412.gif";
 			audio.play();// play
+			if(interval_id != null){
+				window.clearInterval(interval_id);
+				interval_id = null;
+			}
 			interval_id = window.setInterval(function() {checkAudioStop(id,img)},10);
 		}else{
 			img.src="images/laba0412.png";
