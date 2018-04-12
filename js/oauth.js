@@ -5,6 +5,11 @@ if (ua.match(/MicroMessenger/i) == 'micromessenger') {
   window.stop ? window.stop() : document.execCommand("Stop");
 } 
 
+var loading;
+loading = weui.loading('loading', {
+    className: 'custom-classname'
+});
+
 function loadScript(url, callback){
 	callback=callback||function(){};
 	var script = document.createElement("script")
@@ -44,7 +49,7 @@ function getQueryString() {
    return args;
 }
 
-var loading;
+
 function oauth(){
 	var qs = getQueryString();
 	if(qs['code'] != null){
@@ -77,7 +82,10 @@ function oauth(){
 					//   {"project": {"id": 42, "html": "<div>..." }}
 					// append the HTML to context object.
 					//this.append(data.project.html)
-					window.location.replace(response);
+					  loading = weui.loading('loading', {
+						    className: 'custom-classname'
+					  });
+					  window.location.replace(response);
 				  },
 				  error: function(xhr, type){
 					alert('error!:'+JSON.stringify(xhr) + ', type' + JSON.stringify(type))
