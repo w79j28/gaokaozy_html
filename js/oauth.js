@@ -1,11 +1,3 @@
-var ua = window.navigator.userAgent.toLowerCase(); 
-if (ua.match(/MicroMessenger/i) == 'micromessenger') { 
-	//style="display: none"
-	$('body').attr('style', 'display: none');
-} else { 
-  window.stop ? window.stop() : document.execCommand("Stop");
-} 
-
 function loadScript(url, callback){
 	callback=callback||function(){};
 	var script = document.createElement("script")
@@ -31,7 +23,6 @@ function oauth(){
 	
 		var auth = sessionStorage.Authorization;
 		if(auth == null){
-			$('body').text('');
 			var pathStr = location.pathname;
 			pathStr = pathStr.substr(pathStr.lastIndexOf("/")+1);
 			httpGet('/wechat/portal/oauth/url', 
@@ -49,4 +40,16 @@ function oauth(){
 	   }	
 	//}
 }   
-loadScript("js/config.js?20180412=11", oauth);
+
+var ua = window.navigator.userAgent.toLowerCase(); 
+if (ua.match(/MicroMessenger/i) == 'micromessenger') { 
+	//style="display: none"
+	$('body').attr('style', 'display: none');
+	loadScript("js/config.js?20180412=11", oauth);
+} else { 
+ 
+  window.stop ? window.stop() : document.execCommand("Stop");
+  //$('body')
+  //return;
+} 
+
