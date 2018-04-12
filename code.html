@@ -42,7 +42,12 @@ if(qs['code']){
 			function(response){
 				sessionStorage.Authorization = response;
 				delete qs['code'];
-				var url = location.hash.substr(1) + "?" +  $.param(qs);
+				var url = location.hash.substr(1)
+				if(url.indexOf('?') >=0){
+				   url = url.substring(0, url.indexOf('?'));
+				}
+				
+				url = url + "?" + $.param(qs);
 				alert('url:'+url);
 				//window.location.replace(location.hash.substr(1) + "?" +  $.param(qs));
 			}, 
