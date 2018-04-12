@@ -1,6 +1,7 @@
 var ua = window.navigator.userAgent.toLowerCase(); 
 if (ua.match(/MicroMessenger/i) == 'micromessenger') { 
-	//
+	//style="display: none"
+	$('body').attr('style', 'display: none');
 } else { 
   window.stop ? window.stop() : document.execCommand("Stop");
 } 
