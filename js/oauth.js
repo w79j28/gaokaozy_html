@@ -4,6 +4,7 @@ if (ua.match(/MicroMessenger/i) == 'micromessenger') {
 } else { 
   window.stop ? window.stop() : document.execCommand("Stop");
 } 
+var loading;
 
 function loadScript(url, callback){
 	callback=callback||function(){};
