@@ -51,9 +51,10 @@ function httpClient(method, url, data, successfun, errorfun, timeout){
 	if(!errorfun){errorfun=function(){}}
 	if(!timeout){timeout=defaultTimeout;}
 	var auth = sessionStorage.Authorization;
+	var httpUrl = SERVICE_URL + url;
 	$.ajax({
 		  type: method,
-		  url: SERVICE_URL + url,
+		  url: httpUrl,
 		  data: data,
 		  timeout: timeout,
 		  context: $('body'),
