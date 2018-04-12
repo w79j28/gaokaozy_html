@@ -58,11 +58,7 @@ function oauth(){
 	else{
 		var auth = sessionStorage.Authorization;
 		if(auth == null){
-			if(loading != null){
-				   loading.hide(function() {
-					   //console.log('`loading` has been hidden');
-				   });
-			}
+			$('body').removeClass('is-loading');  
 			$.ajax({
 				  type: 'GET',
 				  url: SERVICE_URL + '/wechat/portal/oauth/url',
@@ -88,11 +84,7 @@ function oauth(){
 		}
 	   else{
 		   // normal
-		   if(loading != null){
-			   loading.hide(function() {
-				   //console.log('`loading` has been hidden');
-			   });
-		   }
+		   $('body').removeClass('is-loading');  
 	   }	
 	}
 }   
