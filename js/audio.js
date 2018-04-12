@@ -2,12 +2,14 @@ function audio_repeat(id){
 	var audio = document.getElementById(id); 
 	audio.currentTime = 0;// replay
 }
-function audio_control(id){
+function audio_control(id, img){
 	var audio = document.getElementById(id); 
 	if(audio!==null){ 
-		if(audio.paused){ 
+		if(audio.paused){
+			img.src="images/laba0412.gif";
 			audio.play();// play
 		}else{
+			img.src="images/laba0412.png";
 			audio.pause();// pause
 		}
 	} 
