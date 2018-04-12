@@ -50,13 +50,14 @@ function httpClient(method, url, data, successfun, errorfun, timeout){
 	if(!successfun){successfun=function(){}}
 	if(!errorfun){errorfun=function(){}}
 	if(!timeout){timeout=defaultTimeout;}
+	var auth = sessionStorage.Authorization;
 	$.ajax({
 		  type: method,
 		  url: SERVICE_URL + url,
 		  data: data,
 		  timeout: timeout,
 		  context: $('body'),
-		  headers: {'Content-Type': 'application/json', 'Origin': location.protocol+"//"+location.host, 'Access-Control-Request-Method':method, 'Access-Control-Request-Headers':'origin, content-type, accept, authorization, Pragma, Cache-control, Expires','Authorization':sessionStorage.Authorization},
+		  headers: {'Content-Type': 'application/json', 'Origin': location.protocol+"//"+location.host, 'Access-Control-Request-Method':method, 'Access-Control-Request-Headers':'origin, content-type, accept, authorization, Pragma, Cache-control, Expires','Authorization':auth},
 		  success: function(response){
 			  successfun(response);
 		  },
