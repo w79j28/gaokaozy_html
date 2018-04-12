@@ -48,10 +48,10 @@ function getQueryString() {
 var defaultTimeout = 1000*30;
 
 function httpClient(method, url, data, successfun, errorfun, timeout){
-	 if(!url){return;}
-	 if(!successfun){successfun=function(){}}
-	 if(!errorfun){errorfun=function(){}}
-	 if(!timeout){timeout=defaultTimeout;}
+	if(!url){return;}
+	if(!successfun){successfun=function(){}}
+	if(!errorfun){errorfun=function(){}}
+	if(!timeout){timeout=defaultTimeout;}
 	$.ajax({
 		  type: method,
 		  url: SERVICE_URL + url,
