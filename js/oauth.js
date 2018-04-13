@@ -31,7 +31,21 @@ function oauth(){
 						window.location.replace(response);
 					}, 
 					function(xhr,type){
-						window.location.reload();
+						var getUrlNumber = sessionStorage.GetOauthUrlNumber;
+						if(getUrlNumber){
+							getUrlNumber = parseInt(getUrlNumber);
+						}
+						else{
+							getUrlNumber = 1;
+						}
+						
+						if(getUrlNumber > 3){
+						   	window.stop ? window.stop() : document.execCommand("Stop");
+						}
+						else{
+							sessionStorage.GetOauthUrlNumber = getUrlNumber;
+							window.location.reload();
+						}
 					});
 		}
 	   else{
