@@ -22,7 +22,7 @@
 function oauth(){
 	
 		var auth = sessionStorage.Authorization;
-		if(auth == null){
+		if(!auth){
 			var pathStr = location.pathname;
 			pathStr = pathStr.substring(0, pathStr.lastIndexOf("/"));
 			httpGet('/wechat/portal/oauth/url', 
