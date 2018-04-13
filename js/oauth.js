@@ -33,7 +33,7 @@ function oauth(){
 					function(xhr,type){
 						var getUrlNumber = sessionStorage.GetOauthUrlNumber;
 						if(getUrlNumber){
-							getUrlNumber = parseInt(getUrlNumber);
+							getUrlNumber = parseInt(getUrlNumber) + 1;
 						}
 						else{
 							getUrlNumber = 1;
