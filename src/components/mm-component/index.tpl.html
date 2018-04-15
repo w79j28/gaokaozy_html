@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title><%=htmlWebpackPlugin.options.title%></title>
+    <script type="text/javascript" src="<%=htmlWebpackPlugin.files.chunks["js/manifest"].entry%>"></script>
+     <script type="text/javascript" src="<%=htmlWebpackPlugin.files.chunks["js/vendor"].entry%>"></script>
+</head>
+<body>
+<div>
+    <script type="text/javascript" src="<%=htmlWebpackPlugin.files.chunks["js/mmm"].entry%>"></script>
+    
+
+    <% for(var key in htmlWebpackPlugin.files){%>
+    <%=key %>:<%=JSON.stringify(htmlWebpackPlugin.files[key])%>
+    <%}%>
+   
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title><%=htmlWebpackPlugin.options.title%></title>
+	<% for (var css in htmlWebpackPlugin.files.css) { %>
+    <link href="<%=htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+    <% } %>
+	<script type="text/javascript" src="<%=htmlWebpackPlugin.files.chunks["js/manifest"].entry%>"></script>
+     <script type="text/javascript" src="<%=htmlWebpackPlugin.files.chunks["js/vendor"].entry%>"></script>
+    
+</head>
+<body>
+<div>
+    <script type="text/javascript" src="<%=htmlWebpackPlugin.files.chunks["js/app"].entry%>"></script>
+    <img src='images/laba0412.gif'/>
+
+    <% for(var key in htmlWebpackPlugin.files){%>
+    <%=key %>:<%=JSON.stringify(htmlWebpackPlugin.files[key])%>
+    <%}%>
+   
+</div>
+</body>
+</html>
