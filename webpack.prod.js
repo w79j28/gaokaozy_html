@@ -6,8 +6,9 @@
  module.exports = merge(common, {
    devtool: 'source-map',
    plugins: [
-	   GetHtmlWebpackPlugin('index.html', title, './src/components/reg-component/index.tpl.html', ['js/manifest', 'js/app','js/vendor'], minify),
-	   GetHtmlWebpackPlugin('mm.html', title, './src/components/mm-component/index.tpl.html', ['js/manifest', 'js/mmm','js/vendor'], minify),
+	   
+	   GetHtmlWebpackPlugin('index.html', title, './src/components/register-component/register.tpl.html', ['js/manifest', 'js/register','js/vendor', 'js/commons'], minify),
+	   GetHtmlWebpackPlugin('code.html', title, './src/components/code-component/code.tpl.html', ['js/manifest', 'js/code','js/vendor', 'js/commons'], minify),
        new UglifyJSPlugin({
            sourceMap: true
        }),

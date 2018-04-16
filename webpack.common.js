@@ -9,7 +9,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const webpack = require('webpack');
 
 
-global.title='haha !!!!!';
+global.title='高考志愿填报智能指导系统';
 
 global.GetHtmlWebpackPlugin = function (filename, title, template, chunks, minify){
 	return new HtmlWebpackPlugin({
@@ -35,7 +35,8 @@ global.minify = {
 
 module.exports = {
 	entry: {
-      'js/app': './src/components/reg-component/index.js',
+      'js/register': './src/components/register-component/register.js',
+	  'js/code': './src/components/code-component/code.js',
 	  'js/mmm': './src/components/mm-component/index.js'
 
       //print: './src/print.js'
@@ -67,10 +68,18 @@ module.exports = {
 		splitChunks: {
 			cacheGroups: {
 				commons: {
+				  name: 'js/commons',
+				  chunks: 'all',
+				  minChunks: 2,
+				  enforce: true
+				},
+				vendor: {
 					test: /[\\/]node_modules[\\/]/,
 					name: "js/vendor",
 					chunks: "all"
+				
 				}
+				
 			}
 		}
 	},
@@ -89,33 +98,37 @@ module.exports = {
         },
 		{
 			test: /\.(png|svg|jpg|gif)$/,
-//			loader: 'file-loader',
-//			options: {
-//			    name: '[name].[ext]?[hash]',
-//			    outputPath: 'images/'
-//			} 
 	        use: [
 	            {
 	              loader: 'file-loader',
 	              options: {
-//	            	  name: '[name].[ext]?[hash]',
-	            	  name (file) {
-	            	      if (process.env.NODE_ENV === 'development') {
-	            	        return ('[path][name].[ext]').replace('/src/components/', '/')
-	            	      }
+	            	  name: '[name]-[hash:8].[ext]',
+	            	  // name (file) {
+	            	      // if (process.env.NODE_ENV === 'development') {
+	            	        // return ('[path][name].[ext]').replace('/src/components/', '/')
+	            	      // }
 	            	 
-	            	      return '[hash].[ext]'
-	            	  },
+	            	      // return '[hash].[ext]'
+	            	  // },
 	            	  
 	  			      outputPath: 'images/'
 	              }  
 	            }
 	          ]
-        }/*,
-        {
-            test: /\.(htm|html)$/i,
-            loader: 'html-withimg-loader'
-        }*/
+        },
+		{
+			test: /\.(mp3)$/,
+	        use: [
+	            {
+	              loader: 'file-loader',
+	              options: {
+	            	  name: '[name]-[hash:8].[ext]',
+	            	 
+	  			      outputPath: 'audio/'
+	              }  
+	            }
+	          ]
+        }
 	   ]
 	}
 };

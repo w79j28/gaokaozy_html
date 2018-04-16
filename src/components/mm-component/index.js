@@ -3,6 +3,7 @@ import printMe from './print.js';
 // import $ from 'zepto'
 
 import './style-mm.css';
+import {httpGet, httpPost} from '../common/js/http.js';
 
 function component() {
 	var element = document.createElement('div');
