@@ -6,13 +6,12 @@
 	<% for (var css in htmlWebpackPlugin.files.css) { %>
     <link href="<%=htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
     <% } %>
-	<script type="text/javascript" src="<%=htmlWebpackPlugin.files.chunks["js/manifest"].entry%>"></script>
-     <script type="text/javascript" src="<%=htmlWebpackPlugin.files.chunks["js/vendor"].entry%>"></script>
-    
 </head>
 <body>
+    <% for (var js in htmlWebpackPlugin.files.js) { %>
+     <script type="text/javascript" src="<%=htmlWebpackPlugin.files.js[js]%>"></script>
+    <% } %>
 <div>
-    <script type="text/javascript" src="<%=htmlWebpackPlugin.files.chunks["js/app"].entry%>"></script>
     <img src='images/laba0412.gif'/>
 
     <% for(var key in htmlWebpackPlugin.files){%>

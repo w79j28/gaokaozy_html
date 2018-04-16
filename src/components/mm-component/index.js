@@ -2,12 +2,14 @@
 import printMe from './print.js';
 // import $ from 'zepto'
 
+import './style-mm.css';
+
 function component() {
 	var element = document.createElement('div');
 	var btn = document.createElement('button');
 
 	element.innerHTML = "mmm."//_.join(['Hello', 'webpack'], ' ');
-
+	element.classList.add('hello');
 	btn.innerHTML = 'MMMMM Click me and check the console!';
 	btn.onclick = printMe;
 

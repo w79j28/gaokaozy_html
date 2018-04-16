@@ -58,7 +58,7 @@ module.exports = {
 				// collapseWhitespace: true
 			// }
 	    }),
-		new ExtractTextPlugin("css/styles.css")
+		new ExtractTextPlugin({filename: "style/[name].[chunkhash:8].css", allChunks: true})
 	],
 	output: {
 		filename: '[name]-[chunkhash:6].bundle.js',

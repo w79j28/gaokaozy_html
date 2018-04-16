@@ -2,6 +2,8 @@
 import printMe from './print.js';
 // import $ from 'zepto'
 import './style.css';
+import 'weui';
+import weui from 'weui.js';
 
 function component() {
 	var element = document.createElement('div');
@@ -29,5 +31,5 @@ $(function () {
     else{
 		alert('production Ready to Zepto!') 
 	}	
-	
+	weui.alert('weui js');
 })
