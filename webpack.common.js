@@ -21,11 +21,8 @@ module.exports = {
 
 	plugins: [
 		new CopyWebpackPlugin([
-			{ from: 'src/components/reg-component/images/**/*', to: 'images', transform (content, path) {
-        return optimize(content)
-      }, flatten: true}
-			
-		  ], {copyUnmodified: true}
+			{ from: 'src/components/reg-component/images/**/*', to: 'images', flatten: true}
+		   ], {copyUnmodified: true}
 		),
 		new webpack.ProvidePlugin({
 		  $: 'zepto'
