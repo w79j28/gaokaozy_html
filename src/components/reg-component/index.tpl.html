@@ -12,12 +12,13 @@
      <script type="text/javascript" src="<%=htmlWebpackPlugin.files.js[js]%>"></script>
     <% } %>
 <div>
-    <img src='images/laba0412.gif'/>
+    <img src="<%= require('./images/laba0412.gif')%>"/>
 
     <% for(var key in htmlWebpackPlugin.files){%>
     <%=key %>:<%=JSON.stringify(htmlWebpackPlugin.files[key])%>
     <%}%>
    
 </div>
+#include("./header.tpl.html")
 </body>
 </html>

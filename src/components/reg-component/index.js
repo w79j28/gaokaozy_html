@@ -5,6 +5,8 @@ import './style.css';
 import 'weui';
 import weui from 'weui.js';
 
+import MyGif from './images/laba0412.gif';
+
 function component() {
 	var element = document.createElement('div');
 	var btn = document.createElement('button');
@@ -16,6 +18,11 @@ function component() {
 
 	element.appendChild(btn);
 
+	
+	var myImage = new Image();
+	myImage.src = MyGif;
+	
+	element.appendChild(myImage);
 	return element;
 }
 document.body.appendChild(component());

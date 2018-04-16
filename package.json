@@ -5,15 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production --config webpack.prod.js",
-    "start": "webpack-dev-server --mode development --open --config webpack.dev.js"
+    "build": "cross-env NODE_ENV=production webpack --mode production --config webpack.prod.js",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --config webpack.dev.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.19",
-    "copy-webpack-plugin": "^4.5.1",
+    "cross-env": "^5.1.4",
     "css-loader": "^0.28.11",
     "exports-loader": "^0.7.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
