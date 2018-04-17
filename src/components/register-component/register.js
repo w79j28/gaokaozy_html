@@ -6,11 +6,11 @@ import weui from 'weui.js';
 import LabaGif from '../common/images/laba.gif';
 import LabaPng from '../common/images/laba.png';
 import audioControl from '../common/js/audio.js';
-import {httpGet, httpPost} from '../common/js/http.js';
+import {httpPost} from '../common/js/http.js';
 import oauthCheck from '../common/js/oauth.js';
 
 
-oauthCheck();
+// oauthCheck();
 
 $(function () {
 	// if (process.env.NODE_ENV !== 'production') {
