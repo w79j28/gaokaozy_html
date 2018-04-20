@@ -1,0 +1,32 @@
+<html>
+<head>
+<style>
+
+
+img {border: 0;}
+body{color:#000000;background:#FFF; text-align:center}
+a{color:#000000;text-decoration:none} 
+a:hover{color:#BA2636;text-decoration:underline}
+
+.div1,.div2{ width:500px; margin:20px auto}
+.div1 a:hover img{filter:alpha(Opacity=80);-moz-opacity:0.8;opacity: 0.8}
+.div2 a:hover img{filter:alpha(Opacity=60);-moz-opacity:0.6;opacity: 0.6}
+
+
+.gray {       
+ -webkit-filter: grayscale(100%);     
+  -moz-filter: grayscale(100%);    
+   -ms-filter: grayscale(100%);     
+  -o-filter: grayscale(100%);       
+     filter: grayscale(100%);          
+  
+filter: gray; }
+</style>
+</head>
+<body>
+<div class="div1"><a href="#"><img src="https://www.baidu.com/img/baidu_jgylogo3.gif" /><br />
+试着鼠标放在图片上看看变化效果</a></div>
+<div class="div2"><a href="#"><img src="https://www.baidu.com/img/baidu_jgylogo3.gif" class="gray" /><br />试着鼠标放在图片上看看变化效果</a></div>
+
+</body>
+</html>
